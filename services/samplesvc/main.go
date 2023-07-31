@@ -17,16 +17,14 @@ import (
 
 var version = "?"
 
-var (
-	rootCmd = &cobra.Command{
-		Use:   "samplesvc",
-		Short: "samplesvc for reference",
-		Long:  "A samplesvc for reference in golang-monorepo.",
-		PersistentPreRun: func(cmd *cobra.Command, args []string) {
-			goflag.Parse()
-		},
-	}
-)
+var rootCmd = &cobra.Command{
+	Use:   "samplesvc",
+	Short: "samplesvc for reference",
+	Long:  "A samplesvc for reference in golang-monorepo.",
+	PersistentPreRun: func(cmd *cobra.Command, args []string) {
+		goflag.Parse()
+	},
+}
 
 func init() {
 	rootCmd.AddCommand(RunCmd())
@@ -74,7 +72,6 @@ func RunCmd() *cobra.Command {
 	}
 
 	return cmd
-
 }
 
 func main() {
